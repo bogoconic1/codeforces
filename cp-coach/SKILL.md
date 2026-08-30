@@ -297,21 +297,6 @@ For Codeforces, a rough default training range is current rating +200 to +400,
 but adjust based on topic familiarity, implementation difficulty, and the
 user's goal.
 
-## Contest Mode
-
-If the user says they are in a live or simulated contest:
-
-Prioritize score conversion.
-
-You may be more direct about:
-- complexity feasibility
-- implementation risk
-- whether an approach is worth pursuing
-- partial solutions
-- debugging strategy
-- time management
-
-Still avoid unnecessary spoilers unless requested.
 
 ## User Overrides
 
