@@ -250,13 +250,36 @@ On "accepted", do the following **before** any discussion:
    silently breaks CPH unless you rewrite `srcPath` and rename by
    `md5(new_absolute_path)` — follow the "moving files" section in the repo
    `CLAUDE.md` exactly, then run the checker from its new location to confirm.
-2. **Write `<id>/QUIZ.md`.** Read the user's solution and write ~5 questions
+2. **Write `<id>/FEEDBACK.md`.** Before the quiz, record an honest account
+   of the coaching that happened *before* "accepted", so the user (and future
+   agents) can see how independently the problem was solved. Reconstruct it
+   from the actual transcript, not from memory of what you meant to say.
+   Format (see `2258B2/FEEDBACK.md` for a worked example):
+   - Header line with the date and the **solve time** (wall-clock from first
+     message to "accepted"; ask the user if they did not state it).
+   - **Timeline of hints given** — one numbered item per hint, each tagged
+     with its ladder level (L1 Socratic → L6 code), what was said, and what
+     the user did in response. If a hint turned out to be unnecessary
+     because the user had already found the thing themselves, say so.
+   - **What the user did independently** — observations, counterexamples,
+     data-structure choices, and bookkeeping they produced before any hint
+     on that point.
+   - **What the coach guided** — only items where the idea actually came
+     from the coach. Do not list something here if the user had it first;
+     if the user disputes an item, re-check the transcript and correct it.
+   - **Honest assessment** — one short paragraph splitting modeling /
+     algorithm / implementation / verification between user and coach, and
+     naming the one idea the user should be able to produce unaided next
+     time.
+   Be factual and do not inflate the coach's contribution: a hint that was
+   given but not used does not count as guidance.
+3. **Write `<id>/QUIZ.md`.** Read the user's solution and write ~5 questions
    that probe *why* each non-obvious piece is correct: the modeling of the
    core quantity, each boundary/off-by-one decision, every branch, edge cases
    (empty, max, degenerate), and complexity vs. constraints. Prefer
    "argue both directions" questions over "what does this line do".
    Put `Status: OPEN` at the top of the file.
-3. **Quiz the user.** Present the questions and wait. The bar is a
+4. **Quiz the user.** Present the questions and wait. The bar is a
    rigorous proof, not a plausible story: the user must be able to prove
    and defend every claim their solution depends on. Grade each answer
    strictly:
@@ -274,7 +297,7 @@ On "accepted", do the following **before** any discussion:
      confident. Do not soften the grade.
    Record the grading (`correct` / `incomplete` / `wrong`, with the specific
    gap) under each question in `QUIZ.md`.
-4. **Close only on a perfect score.** Change `Status: OPEN` to
+5. **Close only on a perfect score.** Change `Status: OPEN` to
    `Status: CLOSED` in `QUIZ.md` only when every question has been answered
    correctly. If any answer is wrong, leave it OPEN, tell the user which ones
    remain, and let them retry — do not reveal the answer.
