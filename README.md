@@ -1,1 +1,3 @@
-# daily-agent-skills
+# codeforces
+
+An archive of my solved Codeforces problems.
