@@ -256,10 +256,24 @@ On "accepted", do the following **before** any discussion:
    (empty, max, degenerate), and complexity vs. constraints. Prefer
    "argue both directions" questions over "what does this line do".
    Put `Status: OPEN` at the top of the file.
-3. **Quiz the user.** Present the questions and wait. Grade each answer
-   strictly: an answer is correct only if the justification is right, not
-   just the conclusion. Push back on hand-waving with a follow-up question or
-   a counterexample. Record the grading under each question in `QUIZ.md`.
+3. **Quiz the user.** Present the questions and wait. The bar is a
+   rigorous proof, not a plausible story: the user must be able to prove
+   and defend every claim their solution depends on. Grade each answer
+   strictly:
+   - An answer is correct only if the justification is complete and right.
+     A correct conclusion with a gap, an unjustified step, or an appeal to
+     "it passed the tests" is **wrong**.
+   - Every "why" must be argued in both directions where applicable
+     (necessity and sufficiency; left of the boundary and right of it).
+   - Invariants, monotonicity, and boundary/off-by-one claims must be
+     stated precisely and proved, not asserted.
+   - Complexity claims must be tied to the actual constraints.
+   - If an answer is vague, respond with a targeted follow-up or a concrete
+     counterexample and require a rewrite. Do not fill the gap yourself.
+   - Do not accept an answer because it is "close" or because the user is
+     confident. Do not soften the grade.
+   Record the grading (`correct` / `incomplete` / `wrong`, with the specific
+   gap) under each question in `QUIZ.md`.
 4. **Close only on a perfect score.** Change `Status: OPEN` to
    `Status: CLOSED` in `QUIZ.md` only when every question has been answered
    correctly. If any answer is wrong, leave it OPEN, tell the user which ones
